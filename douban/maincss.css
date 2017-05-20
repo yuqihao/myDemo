@@ -541,7 +541,6 @@ header ul li a.header-market{
 #group-con .right ul ul{
 	width: 260px;
 	height: auto;
-
 	padding-top: 2px;
 	margin-bottom: 10px;
 	overflow: auto;
@@ -807,7 +806,220 @@ header ul li a.header-market{
 	display: block;
 	margin-right: 10px;
 }
+#market-background{
+	width: 100%;
+	height: 725px;
+	background-color: #f7f7f7;
+}
+#market-con{
+	width: 953px;
+	height: 725px;
+	margin: 0 auto;
+	position: relative;
+
+}
+#market-con .left h2.section-title a{
+	color: #919432;
+
+}
+#market-con .left ul li a{
+	color: #343434;
+}
+#market-con .left ul li a:hover{
+	color: #FFF;
+}
+#market-con .mid ul li .img{
+	background: url(./img/market-thing.jpg) no-repeat;
+	background-size: 100%;
+	display: block;
+	width: 110px;
+	height: 110px;
+
+}
+#market-con .mid  ul li a.img1{
+	background: url(./img/market-thing.jpg) no-repeat;
+	background-size: 100%;
+	display: block;
+	width: 250px;
+	height: 250px;
+}
+#market-con .mid ul.down li .img{
+	background: url(./img/market-thing2.jpg) no-repeat;
+	background-size: 100%;
+}
+#market-con .mid ul.down li .img1{
+	background: url(./img/market-thing2.jpg) no-repeat;
+	background-size: 100%;
+}
+#market-con .mid  ul{
+	width: 550px;
+}
+#market-con .mid  ul li{
+	width: 110px;
+	height: 140px;
+	float: left;
+	text-align: center;
+	margin-right: 20px;
+}
+#market-con .mid  ul li.first{
+	width: 250px;
+	height: 250px;
+	text-align: left;
+	
+}
+#market-con .mid .up ul li a.img1{
+	background: url(./img/market-thing.jpg) no-repeat;
+	background-size: 100%;
+	display: block;
+	width: 250px;
+	height: 250px;
+}
+#market-con .mid  ul li .price{
+	float: right;
+}
+
+#market-con .mid .up{
+	position: absolute;
+	top:92px;
+}
+#market-con .mid .down{
+	position: absolute;
+	top:383px;
+}
+
+#market-con .right ul li .img{
+	background: url(./img/store.jpg) no-repeat;
+	background-size:100%;
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
+	float: left;
+
+}
+#market-con .right ul{
+	position: absolute;
+	top: 50px;
+}
+#market-con .right ul li{
+	height: 76px;
+	width: 270px;
+}
+#market-con .right ul li .name{
+	line-height: 30px;
+}
 /*音乐区域结束*/
+
+/*同城区域*/
+#city-con{
+	width: 953px;
+	height: 420px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#city-con .left .section-title a{
+	color: #ed5359;
+}
+
+#city-con .left ul li a{
+	color: #664433;
+}
+#city-con .left ul li a:hover{
+	background: #3377aa;
+	color: #fff;
+}
+#city-con .mid h2{
+	width: 300px;
+}
+#city-con .mid ul{
+	position: absolute;
+	top: 78px;
+	width: 550px;
+}
+#city-con .mid ul li{
+	width: 222px;
+	margin-right: 44px;
+	height:150px;
+	float: left;
+}
+#city-con .mid ul li p{
+	color: #666666;
+	line-height: 20px;
+}
+#city-con .mid ul li p.name{
+	color: #664433;
+	margin-bottom: 3px;
+}
+#city-con .mid ul li a.act-img{
+	display: block;
+	background: url(./img/activity.jpg) no-repeat;
+	background-size: 100%;
+	width: 70px;
+	height: 130px;
+	float: left;
+	margin-right: 10px;
+}
+
+#city-con .right ul li a.act-name{
+	font-size: 14px;
+	color: #333333;
+}
+#city-con .right ul li{
+	margin-bottom: 10px;
+}
+#city-con .right ul li ul li{
+	float: left;
+	margin-right: 12px;
+}
+
+#city-con .right ul ul{
+	width: 260px;
+	overflow: hidden;
+	margin-top: 3px;
+	margin-bottom: 10px;
+	
+
+}
+/*同城区域结束*/
+
+/*底部区域*/
+footer{
+	width: 953px;
+	height: 110px;
+	margin: 0 auto;
+	position: relative;
+	border-top: 1px dashed #dcdcdc;
+}
+
+footer p{
+	margin-top: 20px;
+	color: #999999;
+}
+footer p img{
+	height: 14px;
+}
+footer ul li{
+	color: #3377aa;
+	float: left;
+	margin-right: 3px;
+}
+footer ul{
+	position: absolute;
+	top: 20px;
+	left: 540px;
+}
+footer a.jubao {
+	position:absolute;
+	left: 540px;
+	display: block;
+	background: url(./img/jubao.jpg) no-repeat;
+	background-size: 100%;
+	width: 150px;
+	height: 63px;
+	top: 53px;
+}
+/*底部区域结束*/
 
 /*公共样式*/
 a{
