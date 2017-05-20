@@ -668,6 +668,147 @@ header ul li a.header-market{
 	color: #999999;
 }
 /*读书区域结束*/
+
+/*音乐区域*/
+#music-con{
+	position: relative;
+
+	width: 953px;
+	height: 844px;
+	margin: 0 auto;
+}
+
+#music-con h2.section-title a{
+	color: #f39a57;
+}
+#music-con .left{
+	
+	height: 800px;
+}
+#music-con .douban-app{
+	position: absolute;
+	top: 380px;
+
+	
+}
+#music-con .douban-app a.fm-img{
+	display: block;
+	width: 50px;
+	height: 50px;
+	
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #777777;
+	background: url(./img/app_icons.jpg) -300px 0px no-repeat;
+
+}
+#music-con .douban-app a.music-img{
+	margin-top: 20px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #777777;
+	background: url(./img/app_icons.jpg) -50px 0px no-repeat;
+}
+
+#music-con .mid ul li .img{
+	background: url(./img/music.jpg) no-repeat;
+	display: block;
+	width: 80px;
+	height: 80px;
+
+
+}
+#music-con .mid ul li a{
+	line-height: 26px;
+	color: #555d53;
+}
+#music-con .mid ul li p{
+	margin-bottom: 6px;
+	color: #555d53;
+}
+#music-con .mid ul li span{
+	color: #e09015;
+}
+#music-con .mid ul li a.score-i{
+	display: block;
+	background: url(./img/score_img.png) 0px -22px no-repeat;
+	background-size: 100%;
+	width: 55px;
+	height: 11px;
+	float: left;
+
+}
+#music-con .mid ul li{
+	width:80px;
+	text-align: center;
+	height: 150px;
+	margin-right: 53px;
+	margin-bottom: 40px;
+	float: left;
+
+}
+#music-con .mid ul{
+	width: 550px;
+	position: absolute;
+	top: 75px;
+	left: 20px;
+}
+#music-con .mid-2{
+	width: 560px;
+	height: 250px;
+
+	position: absolute;
+	left: 121px;
+	top: 430px;
+}
+#music-con .mid-2 ul{
+	position: absolute;
+	left: 20px;
+}
+#music-con .mid-2 ul li{
+	width: 80px;
+	height: 120px;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+	margin-right: 53px;
+
+}
+#music-con .mid-2 ul li .img{
+	display: block;
+	background: url(./img/gd.jpg) no-repeat;
+	width: 80px;
+	height: 80px;
+	background-size: 100%;
+
+}
+#music-con .right ul li{
+	margin-bottom: 30px;
+
+}
+#music-con .right ul li p{
+	color:#999999;
+}
+#music-con .right ul li p.singer{
+	color: #555d53;
+	line-height: 30px;
+}
+#music-con .right ul li span{
+	float: left;
+	margin-right: 10px;
+}
+#music-con .right ul li .img{
+	float: left;
+	background:url(./img/singer.jpg) no-repeat;
+	background-size: 100%;
+	width: 48px;
+	height: 48px;
+	display: block;
+	margin-right: 10px;
+}
+/*音乐区域结束*/
+
 /*公共样式*/
 a{
 	color: #3377aa;
