@@ -1,0 +1,128 @@
+*{
+	margin: 0px;
+	padding:0px;
+}
+header{
+	background: #13AFBB;
+	width: 100%;
+	height: 100px;
+}
+header div{
+	position: relative;
+	margin: 0 auto;
+	width: 960px;
+	height: 100px;
+	text-align: center;
+}
+input{
+
+	width: 130px;
+	height: 30px;
+	border: none;
+	text-align: center;
+	background: transparent;
+	font-size:17px;
+}
+button{
+	width: 100px;
+	height: 30px;
+	background-color: #FFF;
+	border: 1px solid #B7B7B7;
+	cursor: pointer;
+	border-radius: 5px;
+	margin: 20px auto;
+	
+}
+.bulid-btn{
+	background: url(./img/jia.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	display: block;
+	background-size: 100%;
+	background-color: #FFF;
+	border: 1px solid #B7B7B7;
+	position: relative;
+	top: 10px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+
+#con{
+	position: relative;
+	overflow: auto;
+	margin: 0 auto;
+	width: 1200px;
+	height: 1000px;
+}
+#con table{
+	position: relative;
+	margin: 0 auto;
+	border: 1px solid #D4D4D4;
+	border-collapse:collapse;
+}
+#con table th{
+	position: relative;
+}
+
+#con table tr  .subtract{
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	display: block;
+	width:16px;
+	height:3px;
+	background: url(./img/jianhao.png) no-repeat;
+	background-size: 100%;
+	border: none;
+	cursor: pointer;
+
+}
+#con table th .order{
+	background: url(./img/triangle.png) no-repeat;
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-size: 100%;
+	transform: rotate(180deg);
+	position: absolute;
+	top: 10px;
+	left: 110px;
+	cursor: pointer;
+}
+#con table th .reverse{
+	background: url(./img/triangle.png) no-repeat;
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-size: 100%;
+	position: absolute;
+	top: 23px;
+	left:110px;
+	cursor: pointer;
+	
+
+
+}
+#con table tr.odd{
+	background-color: #13AFBB;
+}
+#con table tr.hover{
+	background-color: #0AA0CD;
+}
+
+#con table th{
+
+	width: 130px;
+	height: 40px;
+	border: 1px solid #D4D4D4;
+}
+#con table td{
+	position: relative;
+	width: 130px;
+	height: 30px;
+	text-align: center;
+	border: 1px solid #D4D4D4;
+}
+
+#con table 
