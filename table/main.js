@@ -1,11 +1,11 @@
-var row=5;
-var col=3;
+var row=6;
+var col=4;
 
 $(document).ready(function(){
 
 	tableClass();
 	addSubtract();
-	
+	order();
 
 	$(".bulid-btn").click(function(event) {
 		
@@ -43,6 +43,10 @@ $(document).ready(function(){
 	});
 
 
+	$(".row").click(function(event){
+		alert("row:"+row+"col:"+col);
+	});
+
 
 	$(".modify").click(function(event){
 
@@ -66,8 +70,6 @@ $(document).ready(function(){
 		
 	});
 
-
-
 	
 })
 
@@ -87,10 +89,13 @@ function addSubtract(){
 		$(this).find('td:last').append('<span  class="subtract"></span>');
 		$("span.subtract").click(function(event) {
 		$(this).parent().parent().remove();
+		row--;
 		tableClass()
 	});
 	}, function() {
 		$(this).find('.subtract').remove();
+
+
 	});
 }
 
@@ -126,6 +131,8 @@ function modifyComplete(){
 		
 		});
 	});
+
+	order();
 }
 
 
@@ -154,6 +161,7 @@ function build_tr(){
 	{
 	$("tr:last").append('<td><input type=	&quot;text	&quot;></td>');
 	}
+	row++;
 
 }
 
@@ -173,4 +181,64 @@ function build_th(){
 	});
 	}
 	
+}
+
+function order(){
+	$(".order,.reverse" ).click(function(event) {
+		/* Act on the event */
+		var flag=1;
+		if( $(this).attr('class')=="reverse" )
+		{
+			flag=0;
+		}
+
+		var i=$(this).parent().index();	
+		var temp=new Array();
+		for(var n=0;n<row;n++)
+		{
+			var m=n+1;
+			temp[n]=$("tr:eq("+m+") td:eq("+i+")").text();
+			
+		}	
+		var reg = /^\d+$/;
+
+		for(var inp=0;inp<row-1;inp++)
+		{
+			for(var j=0;j<row-inp-1;j++)
+			{
+				if( temp[j].match(reg)&& temp[j+1].match(reg) )  //如果字符串全为数字
+				{	
+					if(temp[j]==''||temp[j+1]=='')  {continue;}
+					
+					if ( flag? parseInt(temp[j])>parseInt(temp[j+1]) : parseInt(temp[j])<parseInt(temp[j+1])) 
+					{
+					var temp0;
+					temp0=temp[j];
+					temp[j]=temp[j+1];
+					temp[j+1]=temp0;
+
+					$("tr:eq("+(j+2)+")").insertBefore("tr:eq("+(j+1)+")");
+					
+					}
+
+				}
+				else
+				{
+					if(temp[j]==''||temp[j+1]=='')  {continue;}
+					if ( flag? temp[j]>temp[j+1] : temp[j]<temp[j+1] ) 
+					{
+					var temp0;
+					temp0=temp[j];
+					temp[j]=temp[j+1];
+					temp[j+1]=temp0;
+
+					$("tr:eq("+(j+2)+")").insertBefore("tr:eq("+(j+1)+")");
+					}
+				}
+			}
+		}
+		tableClass();
+	});
+
+
 }
