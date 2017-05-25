@@ -3,16 +3,18 @@
 	padding:0px;
 }
 header{
-	background: #13AFBB;
-	width: 100%;
-	
+	background-color: #13AFBB;
 	height: 100px;
+	width: 100%;	
+	background-size: 100%;
+	min-width: 1200px;
 }
 header div{
 	position: relative;
 	margin: 0 auto;
-	width: 960px;
+	width: 1200px;
 	height: 100px;
+
 	text-align: center;
 }
 input{
@@ -50,6 +52,7 @@ button{
 
 
 #con{
+	
 	position: relative;
 	overflow: auto;
 	margin: 0 auto;
@@ -101,10 +104,23 @@ button{
 	top: 23px;
 	left:110px;
 	cursor: pointer;
-	
-
 
 }
+#con table th .delete{
+	position: absolute;
+	left: 10px;
+	bottom: 18px;
+	display: block;
+	width:16px;
+	height:3px;
+	background: url(./img/jianhao.png) no-repeat;
+	background-size: 100%;
+	border: none;
+	cursor: pointer;
+	display: none;
+	
+}
+
 #con table tr.odd{
 	background-color: #13AFBB;
 }

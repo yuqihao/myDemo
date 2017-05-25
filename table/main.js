@@ -4,43 +4,31 @@ var col=4;
 $(document).ready(function(){
 
 	tableClass();
+	deleteTh();
 	addSubtract();
 	order();
 
-	$(".bulid-btn").click(function(event) {
-		
-	
-		if ($(".modify").text()=='修改表格')
-		 {
-		 $(".modify").text('修改完成').css({
-		 	background  : '#C7C7C7',
-	
-		 });;
-		 modify();
-		}
-		$("td").css({
-			border: '1px solid red',
-		});
-		build_tr();
-		tableClass(); 
-		addSubtract();
-		
+	// $(".bulid-btn").click(function(event) {
 
-	});
+	// 	if ($(".modify").text()=='修改表格')
+	// 	 {
+	// 	 $(".modify").text('修改完成').css({
+	// 	 	background  : '#C7C7C7',
+	
+	// 	 });
+	// 	 modify();
+	// 	}
+	// 	$("td").css({
+	// 		border: '1px solid red',
+	// 	});
+	// 	build_tr();
+	// 	tableClass(); 
+	// 	addSubtract();
+	// });
+	$(".bulid-btn").click(function(event) { build_tr();}); //新建一行
 
-	$(".build_th").click(function(event) {
-		if ($(".modify").text()=='修改表格')
-		 {
-		 $(".modify").text('修改完成').css({
-		 	background  : '#C7C7C7',
-		
-		 });;
-		 modify();
-		}
-	build_th();
-	tableClass(); 
-		addSubtract();
-	});
+
+	$(".build_th").click(function(event) { build_th(); }); //新建一列
 
 
 	$(".row").click(function(event){
@@ -70,8 +58,18 @@ $(document).ready(function(){
 		
 	});
 
+
 	
 })
+
+function row_col(){
+
+	if (row==0||col==0) 
+	{
+		row=0;
+		col=0;
+	}
+}
 
 function tableClass(){
 	$("#con tr:odd").addClass('odd');
@@ -84,31 +82,61 @@ function tableClass(){
 
 }
 
+//删除行
 function addSubtract(){
 	$("#con tr").hover(function() {
 		$(this).find('td:last').append('<span  class="subtract"></span>');
 		$("span.subtract").click(function(event) {
 		$(this).parent().parent().remove();
 		row--;
+		row_col();
 		tableClass()
 	});
 	}, function() {
 		$(this).find('.subtract').remove();
-
-
 	});
 }
 
+//删除列
+function deleteTh(){
+	$("#con tr th").hover(function() {
+		
+		$(this).find('.delete').css({
+			display: 'block',
+			
+		});
+	}, function() {
+		$(this).find('.delete').css({
+			display: 'none',
+			
+		});
+	});
+
+	$("#con tr th").find('.delete').click(function(event) {
+		/* Act on the event */
+		var ind=$(this).parent().index();
+		$(this).parent().remove();
+		$("tr").find('td:eq('+ind+')').remove();
+		col--;
+		row_col();
+	});
+}
+
+
+//修改表格
 function modify(){
 	$("td,th").each(function(){
 		var text=$(this).text();
 		$(this).html('<input type="text" value="'+text+'">');
-		$(this).css({
+		$("td,th").css({
 			border: '1px solid red',
 		});
+
+
 	});
 }
 
+//完成表格修改
 function modifyComplete(){
 	$("td").each(function(){
 		var text=$(this).find('input').attr('value');
@@ -126,16 +154,18 @@ function modifyComplete(){
 		var text=$(this).find('input').attr('value');
 		var inp=$(this).find('input')[0];
 
-		$(this).html(inp.value+'<span class="order"></span><span class="reverse"></span>').css({
+		$(this).html(inp.value+'<span class="order"></span><span class="reverse"></span><span class="delete"></span>').css({
 			border: '1px solid #D4D4D4',
 		
 		});
 	});
 
 	order();
+	deleteTh();
 }
 
 
+//新建一行
 function build_tr(){
 
 	// var newTr=document.createElement("tr");
@@ -156,23 +186,54 @@ function build_tr(){
 	
 	// $("<tr><td><input type=	&quot;text	&quot;></td><td><input type=	&quot;text	&quot;></td><td><input type=	&quot;text	&quot;></td></tr>").insertAfter('tr:last');
 	// row++;
+
+	if ($(".modify").text()=='修改表格')
+		 {
+		 $(".modify").text('修改完成').css({
+		 	background  : '#C7C7C7',
+	
+		 });
+		 modify();
+		}
+
+	$("td").css({
+			border: '1px solid red',
+	});
+
 	$("tr:last").after('<tr></tr>');
 	for(var i=0;i<col;i++)
 	{
 	$("tr:last").append('<td><input type=	&quot;text	&quot;></td>');
 	}
 	row++;
+	row_col();
 
+	
+	tableClass(); 
+	addSubtract();
 }
 
+
+
+//新建一列
 function build_th(){
+	
+
+	if ($(".modify").text()=='修改表格')
+		 {
+		 $(".modify").text('修改完成').css({
+		 	background  : '#C7C7C7',	
+		 });;
+		 modify();
+		}
+
 	if(col>=9)
 		alert("列数已经达到最大值");
 	else
 	{
 		$("<th><input type=	&quot;text	&quot;></th>").insertAfter('th:last');
 	col++;
-
+	row_col();
 	$("tr").find('td:last').each(function(){
 		$(this).after("<td><input type=	&quot;text	&quot;></td>").css({
 			border: '1px solid red',
@@ -180,9 +241,13 @@ function build_th(){
 		});;
 	});
 	}
+		tableClass(); 
+		addSubtract();	
+		deleteTh();
 	
 }
 
+//表格排序
 function order(){
 	$(".order,.reverse" ).click(function(event) {
 		/* Act on the event */
