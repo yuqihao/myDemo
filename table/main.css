@@ -26,6 +26,17 @@ input{
 	background: transparent;
 	font-size:17px;
 }
+header div input{
+	width: 30px;
+	height: 30px;
+	background: #FFF;
+	border-radius: 5px;
+}
+header .inp{
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
 button{
 	width: 100px;
 	height: 30px;

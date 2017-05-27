@@ -30,10 +30,9 @@ $(document).ready(function(){
 
 	$(".build_th").click(function(event) { build_th(); }); //新建一列
 
+	$(".build_table").click(function(event) { build_table(); });
 
-	$(".row").click(function(event){
-		alert("row:"+row+"col:"+col);
-	});
+	$(".rowAndCol").click(function(event){ alert("row:"+row+"col:"+col); });
 
 
 	$(".modify").click(function(event){
@@ -43,7 +42,7 @@ $(document).ready(function(){
 		 $(this).text('修改完成').css({
 		 	background : '#C7C7C7',
 		 
-		 });;
+		 });
 		 modify();
 		}
 		else
@@ -57,7 +56,6 @@ $(document).ready(function(){
 		}
 		
 	});
-
 
 	
 })
@@ -306,4 +304,56 @@ function order(){
 	});
 
 
+}
+
+
+function build_table(){
+
+	var rowNum=$('.inp').find('.row')[0].value;
+	var colNum=$('.inp').find('.col')[0].value;
+	
+	if (colNum==0) 
+	{
+		alert("列不能为0");
+	}
+	else if(colNum==''||rowNum=='')
+	{
+		alert("请输入列数或行数");
+	}
+	else if(colNum>9)
+	{
+		alert("列数要小于10列");
+	}
+	else
+	{
+		col=colNum;
+		row=rowNum;
+		if ($(".modify").text()=='修改表格')
+		 {
+		 $(".modify").text('修改完成').css({
+		 	background  : '#C7C7C7',	
+		 });
+		}
+		modify();
+
+		$('tr').find('th').each(function(index, el) {
+			$(this).remove();
+		});
+		$('tr').find('td').each(function(index, el) {
+			$(this).remove();
+		});
+
+
+		for(var i=0;i<colNum;i++)
+		{
+			$('tr:first').append('<th><input type="text"></th>');
+		}
+
+		for(var i=0;i<rowNum;i++)
+		{
+			build_tr();
+		}
+
+
+	}
 }
