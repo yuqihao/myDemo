@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 	$(".build_th").click(function(event) { build_th(); }); //新建一列
 
-	$(".build_table").click(function(event) { build_table(); });
+	$(".build_table").click(function(event) { build_table();});
 
 	$(".rowAndCol").click(function(event){ alert("row:"+row+"col:"+col); });
 
@@ -348,12 +348,13 @@ function build_table(){
 		{
 			$('tr:first').append('<th><input type="text"></th>');
 		}
-
+		$('tr:first').siblings('tr').remove();
 		for(var i=0;i<rowNum;i++)
 		{
 			build_tr();
 		}
-
+		col=colNum;
+		row=rowNum;
 
 	}
 }

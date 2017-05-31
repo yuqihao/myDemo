@@ -7,7 +7,7 @@ header{
 	height: 100px;
 	width: 100%;	
 	background-size: 100%;
-	min-width: 1200px;
+	min-width: 1366px;
 }
 header div{
 	position: relative;
@@ -34,7 +34,7 @@ header div input{
 }
 header .inp{
 	position: absolute;
-	left: 50px;
+	left: 100px;
 	top: 50px;
 }
 button{
@@ -67,7 +67,7 @@ button{
 	position: relative;
 	overflow: auto;
 	margin: 0 auto;
-	width: 1200px;
+	width: 1366px;
 	height: 1000px;
 }
 #con table{
